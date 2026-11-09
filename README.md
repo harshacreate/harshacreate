@@ -17,8 +17,4 @@ Final-year B.Tech student in Computer Science and Engineering (Cybersecurity), i
 - [BuildDelay-Estimator](https://github.com/harshacreate/BuildDelay-Estimator) — construction delay risk estimation.
 - [CreditLens-Risk](https://github.com/harshacreate/CreditLens-Risk) — lending-risk research prototype.
 
-More project folders are being prepared for publication and will be listed here as their repositories are added.
-
-Unless a README identifies a documented public dataset, machine-learning demos use synthetic data. Their benchmark metrics are reproducible demonstrations, not claims of real-world performance. Healthcare, lending, education, and hiring examples are educational prototypes and require fairness review and human judgment; they are not production decision systems.
-
 Each repository contains its own setup and project documentation. I’m building and reviewing these projects to strengthen my skills and to be able to explain the design choices, limitations, and results.
