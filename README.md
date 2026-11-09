@@ -10,6 +10,7 @@ Final-year B.Tech student in Computer Science and Engineering (Cybersecurity), f
 - **[NeuralEdge-IDS](https://github.com/harshacreate/NeuralEdge-IDS)** — Compares centralized and federated classifiers on non-IID, simulated IoT traffic under benign behavior drift. **SYNTHETIC evaluation:** both reached 0.993 detection rate under drift; false-alarm rates were 0.060 centralized and 0.067 federated, with 9,000 vs. 1,400 floats exchanged.
 - **[AuthMatrix-Veritas](https://github.com/harshacreate/AuthMatrix-Veritas)** — Tests seeded BOLA, BFLA, and mass-assignment flaws against a vulnerable API, a hardened variant, and a deny-all control. **Fixture evaluation:** the hardened app denied all 10 forbidden probes and allowed all 9 legitimate probes; the deny-all control failed all 9 legitimate probes.
 - **[ProvenanceForge-SLSA](https://github.com/harshacreate/ProvenanceForge-SLSA)** — Creates a signed SBOM/provenance bundle and checks builder trust, signatures, artifact digests, and inventory consistency. **Controlled-fixture evaluation:** rejected all 6 tamper cases and admitted the clean control.
+- **[detection-rules](https://github.com/harshacreate/detection-rules)** — Tests three Sigma examples and two YARA patterns with normalized synthetic cloud events and inert text fixtures. **Local fixture checks:** 7 tests passed, including positive and negative cases; this measures the harness, not real-world detection quality.
 
 ## Applied ML (breadth)
 
