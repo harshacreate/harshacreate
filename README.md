@@ -22,7 +22,7 @@ These ML repositories are supporting breadth projects. Where data are generated 
 
 ## Hands-on learning
 
-I have participated in an inter-collegiate CTF hosted at Vel Tech. I have not verified my placement or recovered challenge notes, so I do not claim a rank or list challenge solves. No certifications are listed yet.
+I have participated in an inter-collegiate CTF hosted at Vel Tech. I have not verified my placement or recovered challenge notes, so I do not claim a rank or list event challenge solves. The [CTF Practice Lab](https://github.com/harshacreate/ctf-writeups) contains three separate synthetic exercises with reference walkthroughs; these are practice materials, not writeups from that event. No certifications are listed yet.
 
 ## Ask me about
 
