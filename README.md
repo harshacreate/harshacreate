@@ -2,7 +2,7 @@
 
 I’m pursuing entry-level cybersecurity roles in detection engineering, application and API security, and software supply-chain security. I build local security labs and test harnesses.
 
-> Results are from synthetic or controlled data unless stated.
+> Results are synthetic or controlled unless the source, split, and limitations are stated.
 
 **Education:** B.Tech in Cyber Security, Hindustan Institute of Technology and Science, Chennai.
 
@@ -10,8 +10,8 @@ I’m pursuing entry-level cybersecurity roles in detection engineering, applica
 
 ## Selected security projects
 
-- **[ThreatScope](https://github.com/harshacreate/ThreatScope)** — Local SOC detection lab for authentication, firewall, web, process, and packet evidence. Its 25-seed benchmark recorded 150 true positives, zero false positives, and zero false negatives.
-- **[PhishLens](https://github.com/harshacreate/PhishLens)** — Explainable URL triage with model contributions, explicit signals, and opt-in domain checks. In a fixed probe set, the model-only approach caught 1/10 phishing URLs; the hybrid caught 9/10 phishing probes and flagged 0/12 benign probes.
+- **[ThreatScope](https://github.com/harshacreate/ThreatScope)** — Local SOC detection lab for authentication, firewall, web, process, and packet evidence. Its 25-seed synthetic benchmark recorded 150 true positives, zero false positives, and zero false negatives. A [pinned OTRF Mordor evaluation](https://github.com/harshacreate/ThreatScope/pull/4) reports that suspicious_process missed the one documented PowerShell scenario; false alerts are unscorable because the sample has no benign labels.
+- **[PhishLens](https://github.com/harshacreate/PhishLens)** — Explainable URL triage with Public Suffix List features and opt-in domain checks. Its [PhiLegit v1 / Tranco 947N2 evaluation](https://github.com/harshacreate/PhishLens/pull/4) used 33,142 domains per class: the hybrid reached F1 0.584 (95% CI 0.579–0.590), recall 0.416 (0.411–0.421), and precision 0.982 (0.980–0.984). Model-only recall was 0.401 (0.396–0.407). This balanced case-control result is not production prevalence; the small synthetic probe result remains separate.
 - **[CryptoGuard](https://github.com/harshacreate/CryptoGuard)** — Password and file-security workbench with password analysis, OS-CSPRNG generation, AES-GCM encryption, and a KDF benchmark.
 - **[SentinelGrid-ATK](https://github.com/harshacreate/SentinelGrid-ATK)** — Stateful cloud-audit detection and response lab with generated scenarios and ATT&CK mapping.
 - **[AuthMatrix-Veritas](https://github.com/harshacreate/AuthMatrix-Veritas)** — In-process API authorization workbench comparing vulnerable, hardened, and deny-all sample APIs using 19 role and resource probes.
