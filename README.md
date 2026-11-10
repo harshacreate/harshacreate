@@ -1,61 +1,38 @@
 # Harsha Malepati
 
-Final-year B.Tech student in Computer Science and Engineering (Cybersecurity), focused on detection engineering, application and API security, software supply-chain security, network and IoT defense, and applied machine learning for security.
+I’m pursuing **entry-level cybersecurity roles** focused on detection engineering, application and API security, and software supply-chain security. I build local security labs and test harnesses, and label synthetic and controlled-fixture results explicitly.
 
-[LinkedIn](https://www.linkedin.com/in/harsha-malepati-b2574a28a) · [ORCID](https://orcid.org/0009-0008-6998-8324) · [X](https://x.com/HarshaMalepati)
+**Education:** B.Tech in Cyber Security, Hindustan Institute of Technology and Science, Chennai.
 
-## Featured security projects
+**Contact:** [23CU0340018@student.hindustanuniv.ac.in](mailto:23CU0340018@student.hindustanuniv.ac.in) · [LinkedIn](https://www.linkedin.com/in/harsha-malepati-b2574a28a/) · [GitHub](https://github.com/harshacreate)
 
-<table>
-  <tr>
-    <td width="33%" valign="top">
-      <a href="https://github.com/harshacreate/SentinelGrid-ATK"><strong>SentinelGrid-ATK</strong></a><br>
-      <a href="https://github.com/harshacreate/SentinelGrid-ATK"><img src="https://raw.githubusercontent.com/harshacreate/SentinelGrid-ATK/main/screenshots/dashboard.jpg" alt="SentinelGrid-ATK dashboard with synthetic scenario controls and alert results" width="320"></a>
-      <p>Stateful detections for five cloud-audit scenarios, with a local dashboard and evaluation harness.</p>
-      <p><strong>Synthetic evaluation:</strong> 100% mean and worst-seed scenario coverage, zero false alerts over 20 seeds, 5.18 s mean alert latency.</p>
-    </td>
-    <td width="33%" valign="top">
-      <a href="https://github.com/harshacreate/AuthMatrix-Veritas"><strong>AuthMatrix-Veritas</strong></a><br>
-      <a href="https://github.com/harshacreate/AuthMatrix-Veritas"><img src="https://raw.githubusercontent.com/harshacreate/AuthMatrix-Veritas/main/screenshots/dashboard.jpg" alt="AuthMatrix-Veritas dashboard showing route probes and authorization metrics" width="320"></a>
-      <p>An API authorization workbench that compares vulnerable, hardened, and deny-all controls.</p>
-      <p><strong>Fixture evaluation:</strong> the hardened app denied all 10 forbidden probes and allowed all 9 legitimate probes.</p>
-    </td>
-    <td width="33%" valign="top">
-      <a href="https://github.com/harshacreate/ProvenanceForge-SLSA"><strong>ProvenanceForge-SLSA</strong></a><br>
-      <a href="https://github.com/harshacreate/ProvenanceForge-SLSA"><img src="https://raw.githubusercontent.com/harshacreate/ProvenanceForge-SLSA/main/screenshots/dashboard.jpg" alt="ProvenanceForge-SLSA dashboard showing bundle verification and tamper results" width="320"></a>
-      <p>A local build-verification exercise for signed SBOMs, provenance, and independently trusted keys.</p>
-      <p><strong>Controlled fixtures:</strong> rejected all 6 tamper cases and admitted the clean control.</p>
-    </td>
-  </tr>
-</table>
+## Selected security projects
 
-All results above come from synthetic or controlled local fixtures; they do not claim production performance.
+- **[ThreatScope](https://github.com/harshacreate/ThreatScope)** — Local SOC detection lab for synthetic authentication, firewall, web, process, and packet evidence. Its 25-seed generated benchmark recorded 150 true positives, zero false positives, and zero false negatives for the included rules. This is a fixture result, not a claim about unseen or production logs. The existing suite has 13 tests.
+- **[PhishLens](https://github.com/harshacreate/PhishLens)** — Explainable URL triage with model contributions, explicit signals, and opt-in domain checks. On a small fixed synthetic holdout, model-only recall was 1/10; the hybrid caught 9/10 phishing probes with 0/12 benign probes flagged. Synthetic and limited; not a real-world detection rate.
+- **[AuthMatrix-Veritas](https://github.com/harshacreate/AuthMatrix-Veritas)** — In-process API authorization workbench comparing vulnerable, hardened, and deny-all controls. On 19 bundled probes, the hardened fixture blocked 10/10 forbidden requests and allowed 9/9 legitimate requests. The nine tests exercise the sample APIs, not an external service.
+- **[ProvenanceForge-SLSA](https://github.com/harshacreate/ProvenanceForge-SLSA)** — Local artifact verification exercise with signed inventory/provenance, a separately enrolled trust key, and six controlled tamper cases. It is not an official SLSA verifier or production key-management system.
+- **[detection-rules](https://github.com/harshacreate/detection-rules)** — Three Sigma-style cloud-event rules and two YARA patterns with a local test harness. Seven tests use synthetic JSON events and inert text fixtures; the runner supports a documented subset, not the full Sigma specification.
+- **[CryptoGuard](https://github.com/harshacreate/CryptoGuard)** — Local password and file-security workbench covering password analysis, OS-CSPRNG generation, AES-GCM encryption, and host-specific KDF measurements. The benchmark prints machine-dependent values; I don’t present one run as a universal performance result. Its suite contains 14 tests.
 
-## B.Tech projects by year
+## Other security work
 
-| Year | Project & semester | Focus |
-|---|---|---|
-| Year 1 | [CryptoGuard](https://github.com/harshacreate/CryptoGuard) · Design Project I · Semester III (2024–25) | Password analysis, secure generation, password-storage benchmarking, and authenticated file encryption. |
-| Year 2 | [PhishLens](https://github.com/harshacreate/PhishLens) · Design Project II · Semester IV (2024–25) | Explainable hybrid phishing-URL detection, including evaluation on out-of-template attacks. |
-| Year 3 | [ThreatScope](https://github.com/harshacreate/ThreatScope) · Design Project III · Semester V (2025–26) | SOC detection lab with MITRE ATT&CK-mapped alerts and ground-truth rule evaluation. |
+- [SentinelGrid-ATK](https://github.com/harshacreate/SentinelGrid-ATK) — Stateful rules and response notes for generated cloud-audit scenarios; no cloud account is connected.
+- [NeuralEdge-IDS](https://github.com/harshacreate/NeuralEdge-IDS) — Centralized/federated classifier comparison on simulated IoT traffic; this is not a privacy guarantee or live network test.
+- [CTF Practice Lab](https://github.com/harshacreate/ctf-writeups) — Three local synthetic exercises with reference walkthroughs, not writeups from a third-party event.
 
-## More security work
+<details>
+<summary>Sector-focused ML prototypes</summary>
 
-- **[NeuralEdge-IDS](https://github.com/harshacreate/NeuralEdge-IDS)** — Compares centralized and federated classifiers on non-IID, simulated IoT traffic under benign behavior drift. **Synthetic evaluation:** both reached 0.993 detection rate under drift; false-alarm rates were 0.060 centralized and 0.067 federated, with 9,000 vs. 1,400 floats exchanged.
-- **[detection-rules](https://github.com/harshacreate/detection-rules)** — Tests three Sigma examples and two YARA patterns with normalized synthetic cloud events and inert text fixtures. **Local fixture checks:** 7 tests passed, including positive and negative cases; this measures the harness, not real-world detection quality.
+I maintain 15 small synthetic-data projects across forecasting, classification, and anomaly detection. They are supporting experiments, not evidence of performance on real people, organizations, or operational data. See the [repository list](https://github.com/harshacreate?tab=repositories) for all projects.
 
-## Applied ML (breadth)
+</details>
 
-- **Network and infrastructure:** [NetPulse-Traffic](https://github.com/harshacreate/NetPulse-Traffic), [FactoryGuard-Maintenance](https://github.com/harshacreate/FactoryGuard-Maintenance), [AquaGuard-Leaks](https://github.com/harshacreate/AquaGuard-Leaks), [Mariner-Monitor](https://github.com/harshacreate/Mariner-Monitor), [ReliefRoute-Resources](https://github.com/harshacreate/ReliefRoute-Resources).
-- **Forecasting and operations:** [FlowCast-Demand](https://github.com/harshacreate/FlowCast-Demand), [RouteWise-ETA](https://github.com/harshacreate/RouteWise-ETA), [FreshTrack-ShelfLife](https://github.com/harshacreate/FreshTrack-ShelfLife), [BuildDelay-Estimator](https://github.com/harshacreate/BuildDelay-Estimator).
-- **Other prototypes:** [AeroPulse-Air](https://github.com/harshacreate/AeroPulse-Air), [AgriVision-Crop](https://github.com/harshacreate/AgriVision-Crop), [DeskTriage-Intent](https://github.com/harshacreate/DeskTriage-Intent), [CreditLens-Risk](https://github.com/harshacreate/CreditLens-Risk), [LearnLoop-Predict](https://github.com/harshacreate/LearnLoop-Predict), [MedSignal-NoShow](https://github.com/harshacreate/MedSignal-NoShow).
+<details>
+<summary>Single-file browser utilities</summary>
 
-These ML repositories are supporting breadth projects. Where data are generated locally, the README labels the benchmark synthetic; it is not evidence of performance on live systems. Healthcare, lending, education, and hiring examples are educational prototypes, not production decision tools.
+Ten standalone HTML tools: [CipherVault](https://github.com/harshacreate/CipherVault), [CSPForge](https://github.com/harshacreate/CSPForge), [EncodeKit](https://github.com/harshacreate/EncodeKit), [HashLab](https://github.com/harshacreate/HashLab), [HeaderGuard](https://github.com/harshacreate/HeaderGuard), [JWTInspect](https://github.com/harshacreate/JWTInspect), [PassForge](https://github.com/harshacreate/PassForge), [PhishCheck](https://github.com/harshacreate/PhishCheck), [PhishIQ](https://github.com/harshacreate/PhishIQ), and [SecretSweeper](https://github.com/harshacreate/SecretSweeper). They have no hosted demos or automated tests today; treat them as small learning utilities.
 
-## Hands-on learning
+</details>
 
-I have participated in an inter-collegiate CTF hosted at Vel Tech. I have not verified my placement or recovered challenge notes, so I do not claim a rank or list event challenge solves. The [CTF Practice Lab](https://github.com/harshacreate/ctf-writeups) contains three separate synthetic exercises with reference walkthroughs; these are practice materials, not writeups from that event. No certifications are listed yet.
-
-## Ask me about
-
-How I test detections against labeled scenarios, how API authorization tests distinguish forbidden from legitimate requests, and how a verifier should obtain trusted keys independently of a signed bundle.
+All reported experiment results are synthetic or controlled fixtures. No hosted portfolio or live project demo is configured yet.
