@@ -4,7 +4,7 @@ I’m focusing on entry-level cybersecurity roles focused on detection engineeri
 
 Education: B.Tech in Cyber Security, Hindustan Institute of Technology and Science, Chennai.
 
-Contact: [23CU0340018@student.hindustanuniv.ac.in](mailto:23CU0340018@student.hindustanuniv.ac.in) · [LinkedIn](https://www.linkedin.com/in/harsha-malepati-b2574a28a/) · [GitHub](https://github.com/harshacreate)
+Contact: [harshamalepati2006@gmail.com](mailto:harshamalepati2006@gmail.com) · [LinkedIn](https://www.linkedin.com/in/harsha-malepati-b2574a28a/) · [GitHub](https://github.com/harshacreate)
 
 Security Related projects
 
