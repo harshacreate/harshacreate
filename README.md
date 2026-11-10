@@ -31,6 +31,14 @@ Final-year B.Tech student in Computer Science and Engineering (Cybersecurity), f
 
 All results above come from synthetic or controlled local fixtures; they do not claim production performance.
 
+## B.Tech projects by year
+
+| Year | Project & semester | Focus |
+|---|---|---|
+| Year 1 | [CryptoGuard](https://github.com/harshacreate/CryptoGuard) · Design Project I · Semester III (2024–25) | Password analysis, secure generation, password-storage benchmarking, and authenticated file encryption. |
+| Year 2 | [PhishLens](https://github.com/harshacreate/PhishLens) · Design Project II · Semester IV (2024–25) | Explainable hybrid phishing-URL detection, including evaluation on out-of-template attacks. |
+| Year 3 | [ThreatScope](https://github.com/harshacreate/ThreatScope) · Design Project III · Semester V (2025–26) | SOC detection lab with MITRE ATT&CK-mapped alerts and ground-truth rule evaluation. |
+
 ## More security work
 
 - **[NeuralEdge-IDS](https://github.com/harshacreate/NeuralEdge-IDS)** — Compares centralized and federated classifiers on non-IID, simulated IoT traffic under benign behavior drift. **Synthetic evaluation:** both reached 0.993 detection rate under drift; false-alarm rates were 0.060 centralized and 0.067 federated, with 9,000 vs. 1,400 floats exchanged.
