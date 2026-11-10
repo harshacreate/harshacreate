@@ -23,16 +23,5 @@ I’m pursuing entry-level cybersecurity roles in detection engineering, applica
 - [NeuralEdge-IDS](https://github.com/harshacreate/NeuralEdge-IDS) — Centralized and federated classifier comparison on simulated IoT traffic.
 - [CTF Practice Lab](https://github.com/harshacreate/ctf-writeups) — Local exercises in authorization, log analysis, and cryptography with reference walkthroughs.
 
-<details>
-<summary>Sector-focused ML prototypes</summary>
-
-Fifteen small projects across forecasting, classification, and anomaly detection. See the [repository list](https://github.com/harshacreate?tab=repositories).
-
-</details>
-
-<details>
-<summary>Single-file browser utilities</summary>
-
-Ten standalone tools: [CipherVault](https://github.com/harshacreate/CipherVault), [CSPForge](https://github.com/harshacreate/CSPForge), [EncodeKit](https://github.com/harshacreate/EncodeKit), [HashLab](https://github.com/harshacreate/HashLab), [HeaderGuard](https://github.com/harshacreate/HeaderGuard), [JWTInspect](https://github.com/harshacreate/JWTInspect), [PassForge](https://github.com/harshacreate/PassForge), [PhishCheck](https://github.com/harshacreate/PhishCheck), [PhishIQ](https://github.com/harshacreate/PhishIQ), and [SecretSweeper](https://github.com/harshacreate/SecretSweeper).
-
-</details>
+- **[Security Toolkit](https://github.com/harshacreate/security-toolkit)** — Ten browser-based utilities; [open the live demo](https://harshacreate.github.io/security-toolkit/).
+- **[Applied ML Prototypes](https://github.com/harshacreate/applied-ml-prototypes)** — Fifteen sector-focused prototypes, with synthetic-data results unless stated otherwise.
