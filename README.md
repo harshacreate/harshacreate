@@ -23,6 +23,11 @@ I’m pursuing entry-level cybersecurity roles in detection engineering, applica
 - [NeuralEdge-IDS](https://github.com/harshacreate/NeuralEdge-IDS) — Centralized and federated classifier comparison on simulated IoT traffic.
 - [CTF Practice Lab](https://github.com/harshacreate/ctf-writeups) — Local exercises in authorization, log analysis, and cryptography with reference walkthroughs.
 
+## Writing
+
+- [PhishLens: when the model missed the phish](docs/blog/phishlens-real-data.md) — Out-of-template probes, a hybrid-rule intervention, and a held-out public-data evaluation.
+- [ThreatScope: synthetic detections meet Mordor](docs/blog/threatscope-real-data.md) — What the synthetic benchmark showed, what one real scenario exposed, and how to reproduce it.
+
 <details>
 <summary>Sector-focused ML prototypes</summary>
 
