@@ -2,8 +2,6 @@
 
 I’m pursuing entry-level cybersecurity roles in detection engineering, application and API security, and software supply-chain security. I build local security labs and test harnesses.
 
-> Results are from synthetic or controlled data unless stated.
-
 **Education:** B.Tech in Cyber Security, Hindustan Institute of Technology and Science, Chennai.
 
 **Contact:** [harshamalepati2006@gmail.com](mailto:harshamalepati2006@gmail.com) · [LinkedIn](https://www.linkedin.com/in/harsha-malepati-b2574a28a/) · [GitHub](https://github.com/harshacreate)
