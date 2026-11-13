@@ -4,6 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Harsha Malepati — cybersecurity student focused on detection engineering and API security. Reproducible security labs, measured results, and honest limitations.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Harsha Malepati — Cybersecurity Student">
+  <meta property="og:description" content="Final-year B.Tech Cybersecurity student focused on detection engineering, with API authorization as a complementary focus.">
+  <meta property="og:url" content="https://harshacreate.github.io/harshacreate/">
+  <meta property="og:image" content="https://raw.githubusercontent.com/harshacreate/ThreatScope/main/docs/screenshots/01-soc-overview.png">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0a1020">
   <title>Harsha Malepati — Cybersecurity</title>
   <style>
@@ -55,7 +61,8 @@
     .section-head p { margin: 0; color: var(--muted); max-width: 470px; }
     .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
     .card { overflow: hidden; background: var(--panel); border: 1px solid var(--line); border-radius: 13px; }
-    .card img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #18243b; border-bottom: 1px solid var(--line); }
+    .card img, .card-graphic { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #18243b; border-bottom: 1px solid var(--line); }
+    .card-graphic text { font-family: ui-sans-serif, system-ui, sans-serif; }
     .card-body { padding: 20px; }
     .card h3 { margin: 0 0 7px; font-size: 1.18rem; }
     .card p { margin: 0; color: var(--muted); }
@@ -103,7 +110,7 @@
     <div class="hero">
       <div class="eyebrow">Final-year B.Tech · Cybersecurity</div>
       <h1>Harsha Malepati</h1>
-      <p class="lead">I focus on detection engineering, with API security as an adjacent strength. I build local security labs, test them against controlled scenarios, and document what the results do—and do not—show.</p>
+      <p class="lead">I focus on detection engineering, with API security as an adjacent strength. I build local security labs, test them against controlled scenarios, and document what the results do—and do not—show. I’m seeking entry-level detection engineering opportunities.</p>
       <div class="actions">
         <a class="button primary" href="#work">Explore selected work</a>
         <a class="button" href="https://github.com/harshacreate">GitHub</a>
@@ -120,7 +127,7 @@
     <section id="work">
       <div class="section-head">
         <h2>Selected security work</h2>
-        <p>Reproducible student projects across SOC detection, cloud audit events, API authorization, and phishing analysis.</p>
+        <p>Student projects focused on SOC and cloud-audit detection, rule testing, and API authorization.</p>
       </div>
 
       <div class="grid">
@@ -150,24 +157,43 @@
         </article>
 
         <article class="card">
-          <img src="https://raw.githubusercontent.com/harshacreate/AuthMatrix-Veritas/main/screenshots/dashboard.jpg" alt="AuthMatrix API authorization workbench" loading="lazy">
+          <svg class="card-graphic" viewBox="0 0 1280 720" role="img" aria-labelledby="rules-graphic-title rules-graphic-desc">
+            <title id="rules-graphic-title">Detection Rules Lab test flow</title>
+            <desc id="rules-graphic-desc">Synthetic event and harmless text fixtures are checked against example rules, then matched and non-matched cases are asserted by tests.</desc>
+            <rect width="1280" height="720" fill="#101a2e"/>
+            <text x="70" y="95" fill="#7be0b5" font-size="30" font-weight="700">DETECTION RULES LAB</text>
+            <text x="70" y="145" fill="#aab7ca" font-size="22">Small, testable examples · synthetic fixtures only</text>
+            <g font-size="26" font-weight="650">
+              <rect x="70" y="245" width="280" height="190" rx="18" fill="#16243a" stroke="#31415d" stroke-width="3"/>
+              <text x="110" y="315" fill="#eef3fb">Positive +</text><text x="110" y="355" fill="#eef3fb">negative</text><text x="110" y="395" fill="#eef3fb">fixtures</text>
+              <rect x="500" y="245" width="280" height="190" rx="18" fill="#16243a" stroke="#7be0b5" stroke-width="3"/>
+              <text x="555" y="315" fill="#eef3fb">Rule</text><text x="555" y="355" fill="#eef3fb">matcher</text><text x="555" y="395" fill="#aab7ca" font-size="20">Sigma-style + YARA</text>
+              <rect x="930" y="245" width="280" height="190" rx="18" fill="#16243a" stroke="#31415d" stroke-width="3"/>
+              <text x="970" y="315" fill="#eef3fb">Pytest</text><text x="970" y="355" fill="#eef3fb">assertions</text><text x="970" y="395" fill="#aab7ca" font-size="20">match / no match</text>
+            </g>
+            <g stroke="#7be0b5" stroke-width="5" fill="none">
+              <path d="M350 340h130"/><path d="M780 340h130"/>
+              <path d="M455 325l25 15-25 15"/><path d="M885 325l25 15-25 15"/>
+            </g>
+            <text x="70" y="555" fill="#aab7ca" font-size="22">The harness supports a documented equality-only subset, not the full Sigma specification.</text>
+          </svg>
           <div class="card-body">
-            <h3>AuthMatrix-Veritas</h3>
-            <p>An API authorization workbench comparing vulnerable, hardened, and deny-all fixtures so legitimate access counts too.</p>
-            <p class="result">Controlled fixture result: the hardened API denied 10 forbidden probes and allowed 9 legitimate probes.</p>
-            <div class="meta"><span class="tag">API security</span><span class="tag">FastAPI</span><span class="tag">Authorization testing</span></div>
-            <div class="card-links"><a class="text-link" href="https://github.com/harshacreate/AuthMatrix-Veritas">Source &amp; results</a></div>
+            <h3>Detection Rules Lab</h3>
+            <p>A small rule-testing lab with three Sigma-style cloud-event rules, two YARA patterns, and a Python harness.</p>
+            <p class="result">Fixture checks: each included rule matches its synthetic positive example and not its paired negative control.</p>
+            <div class="meta"><span class="tag">Detection rules</span><span class="tag">Sigma-style</span><span class="tag">YARA</span><span class="tag">Python</span></div>
+            <div class="card-links"><a class="text-link" href="https://github.com/harshacreate/detection-rules">Source &amp; test details</a></div>
           </div>
         </article>
 
         <article class="card">
-          <img src="https://raw.githubusercontent.com/harshacreate/PhishLens/main/docs/screenshots/02-phishing-verdict.png" alt="PhishLens explainable URL analysis" loading="lazy">
+          <img src="https://raw.githubusercontent.com/harshacreate/AuthMatrix-Veritas/main/screenshots/dashboard.jpg" alt="AuthMatrix API authorization workbench" loading="lazy">
           <div class="card-body">
-            <h3>PhishLens</h3>
-            <p>Explainable URL triage with visible signals, model contributions, and opt-in domain enrichment.</p>
-            <p class="result">Small held-out probe set: hybrid analysis caught 9 of 10 phishing probes and flagged 0 of 12 benign probes.</p>
-            <div class="meta"><span class="tag">Application security</span><span class="tag">Explainable ML</span><span class="tag">Python</span></div>
-            <div class="card-links"><a class="text-link" href="https://github.com/harshacreate/PhishLens">Source &amp; results</a></div>
+            <h3>AuthMatrix-Veritas</h3>
+            <p>An API authorization workbench comparing vulnerable, hardened, and deny-all fixtures so legitimate access counts too.</p>
+            <p class="result">Controlled fixture evaluation: the hardened version denied 10 forbidden probes and allowed 9 legitimate probes. Results apply only to the bundled probe set.</p>
+            <div class="meta"><span class="tag">API security</span><span class="tag">FastAPI</span><span class="tag">Authorization testing</span></div>
+            <div class="card-links"><a class="text-link" href="https://github.com/harshacreate/AuthMatrix-Veritas">Source &amp; results</a></div>
           </div>
         </article>
       </div>
@@ -178,11 +204,11 @@
     <section aria-labelledby="more-heading">
       <div class="section-head">
         <h2 id="more-heading">More security projects</h2>
-        <p>Supporting work in software supply-chain verification, detection rules, cryptography, and IoT security.</p>
+        <p>Supporting work in phishing triage, software supply-chain verification, cryptography, and IoT security.</p>
       </div>
       <div class="supporting">
         <a href="https://github.com/harshacreate/ProvenanceForge-SLSA">ProvenanceForge-SLSA</a>
-        <a href="https://github.com/harshacreate/detection-rules">Sigma &amp; YARA lab</a>
+        <a href="https://github.com/harshacreate/PhishLens">PhishLens</a>
         <a href="https://github.com/harshacreate/CryptoGuard">CryptoGuard</a>
         <a href="https://github.com/harshacreate/NeuralEdge-IDS">NeuralEdge-IDS</a>
         <a href="https://github.com/harshacreate/ctf-writeups">CTF Practice Lab</a>
