@@ -22,8 +22,8 @@ These projects use sample data or small local tests. Each project page says what
 
 ## Writing
 
-- [Testing PhishLens on public links](docs/blog/phishlens-real-data.md) — Where the model missed signs and what changed in a test with public links.
-- [Testing ThreatScope with public data](docs/blog/threatscope-real-data.md) — What the made-up tests showed and what one public sample revealed.
+- [Testing PhishLens on public links](docs/blog/phishlens-real-data.md): Where the model missed signs and what changed in a test with public links.
+- [Testing ThreatScope with public data](docs/blog/threatscope-real-data.md): What the made-up tests showed and what one public sample revealed.
 
 ## Links
 
