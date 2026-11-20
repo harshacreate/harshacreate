@@ -1,6 +1,6 @@
 # Harsha Malepati
 
-I am a final-year B.Tech student studying Computer Science and Engineering with a focus on cybersecurity at Hindustan Institute of Technology and Science in Chennai. My course is in collaboration with IBM. I have finished six semesters with a CGPA of 8.6/10, and I expect to graduate in 2027.
+I am in my final year of B.Tech at HITS. I study Computer Science and focus on cybersecurity. My course is with IBM. My CGPA is 8.6/10. I expect to graduate in 2027.
 
 ## Projects
 
