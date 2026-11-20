@@ -27,4 +27,4 @@ These projects use sample data or small local tests. Each project page says what
 
 ## Links
 
-[Portfolio](https://harshacreate.github.io/harshacreate/) · [LinkedIn](https://www.linkedin.com/in/harsha-malepati-b2574a28a/) · [ORCID](https://orcid.org/0009-0008-6998-8324) · [Email](mailto:harshamalepati2006@gmail.com)
+[Portfolio](https://harshacreate.github.io/harshacreate/), [LinkedIn](https://www.linkedin.com/in/harsha-malepati-b2574a28a/), [ORCID](https://orcid.org/0009-0008-6998-8324), [Email](mailto:harshamalepati2006@gmail.com)
