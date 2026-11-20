@@ -1,46 +1,50 @@
-# ThreatScope: synthetic detections meet Mordor
+# Testing ThreatScope with public data
 
-ThreatScope is a local detection lab that turns authentication, firewall, web, process, and packet events into alerts. Its synthetic benchmark is useful for checking whether the rules work on scenarios the project generates. It is also easy to overread: the generator injects events designed to exercise the same rules that score them.
+ThreatScope reads sample logs and network events and turns them into alerts. Its made-up tests check whether the rules catch the cases the project creates. These tests are useful, but they can look too good because the sample events are made to match the same rules being tested.
 
-Across 25 synthetic seeds, the benchmark recorded 150 true positives, zero false positives, and zero false negatives. That is a reproducible integration check, not an estimate of performance on an enterprise network. To expose a different failure mode, I added a small adapter for one public OTRF Security-Datasets (Mordor) atomic Windows execution sample and ran the existing process rule against it.
+Across 25 test runs, ThreatScope made 150 correct alerts and had no wrong or missed alerts in those examples. This is a repeatable check of the project, not a measure of how it would work on a real company network.
 
-## The real-data result
+To look for another kind of problem, I tried one public Windows PowerShell attack sample from OTRF Security-Datasets, also known as Mordor. I added a small adapter to read its data and ran the existing process rule.
 
-The sample contains 2,067 JSON-lines events, including five Sysmon Process Create records. Its scenario documentation describes one Local PowerShell Execution and maps it to ATT&CK technique T1059.001. The public sample does not provide event-level benign/malicious labels or a benign-scenario split.
+## Result from the public sample
 
-| Rule | Hits | Misses | False alerts | Why this result unit applies |
+The sample has 2,067 lines of JSON, including five Sysmon Process Create events. Its notes describe one local PowerShell attack and link it to ATT&CK method T1059.001. The sample does not say which single events are safe or harmful, and it has no safe attack case.
+
+| Rule | Alerts | Misses | Wrong alerts | What this sample can show |
 |---|---:|---:|---:|---|
-| `suspicious_process` | 0 | 1 | N/A | One documented positive PowerShell scenario; no benign labels |
-| `brute_force_login` | N/A | N/A | N/A | No labeled authentication scenario |
-| `impossible_travel` | N/A | N/A | N/A | No labeled anomalous-login scenario |
-| `port_scan` | N/A | N/A | N/A | This is not a labeled port-scan scenario |
-| `data_exfil` | N/A | N/A | N/A | No byte-volume or exfiltration ground truth |
+| suspicious_process | 0 | 1 | N/A | One known PowerShell attack; no safe event labels |
+| brute_force_login | N/A | N/A | N/A | No labeled login test |
+| impossible_travel | N/A | N/A | N/A | No labeled unusual login test |
+| port_scan | N/A | N/A | N/A | This is not a port scan test |
+| data_exfil | N/A | N/A | N/A | No labels for data volume or theft |
 
-The one reported miss is at the **scenario level**: the detector did not alert for the documented PowerShell execution scenario. I did not invent per-event labels. False-alert counts cannot be computed without known benign events, and the other rules have no applicable labeled activity in this sample. These counts cannot be compared directly with the synthetic event-level counts.
+The process rule missed the one known PowerShell attack. I counted this as one missed attack case. I did not guess labels for each event. The sample has no known safe events, so I cannot count wrong alerts. It also cannot test the other four rules. These results cannot be compared with the test that uses made-up events, and they do not show how well the app works in general.
 
-## What broke
+## Why the rule missed it
 
-The adapter mapped the five Sysmon Process Create records into the existing process-event schema: `EventID` selected process-create events; `UtcTime` (or `EventTime`) became the timestamp; `Hostname` became the host; `User` (or `AccountName`) became the user; and the basenames of `Image` and `ParentImage` became process and parent-process fields. `CommandLine` supplied the command. The adapter found the process records; the rule's command matcher was the weak point.
+I changed the five Sysmon process records to the format ThreatScope reads. I used EventID 1 to keep process events. UtcTime, or EventTime if needed, became the time. Hostname became the host. User, or AccountName, became the user. Image and ParentImage became the process and parent names. CommandLine became the command text.
 
-The current rule looks for literal text like `powershell -enc` or `powershell -encodedcommand`. The observed command used a quoted executable path and placed flags between the executable and `-enc`, so that exact substring was absent. The rule therefore missed the scenario. This is a concrete brittleness finding: matching a single token sequence is too narrow for realistic quoting and option order. A follow-up should normalize executable paths and parse command-line tokens, then check the change against both positive and benign examples before changing the rule.
+The adapter found the process records. The rule that checks the command was the problem. It looks for exact text such as "powershell -enc" or "powershell -encodedcommand". The sample had the program path in quotes and put other flags between "powershell" and "-enc". The exact text was not there, so the rule missed the attack.
 
-The dataset is also narrower than a full incident timeline. It contains no firewall, authentication, or web evidence chain for evaluating ThreatScope's cross-source correlation. The result says nothing about that correlation's operational recall or false-alert rate.
+This shows that looking for one exact line of text can miss commands written another way. A next step could read the program name and command parts before checking them. That change should be tested with both attack and safe examples.
 
-## Dataset, license, and split
+The sample also has no firewall, login, or web events to test ThreatScope's alert links across different event types. It cannot show whether that part of the app finds attacks or raises wrong alerts.
 
-The source is **OTRF Security-Datasets (Mordor)**, dataset ID `SDWIN-190518182022`, pinned to upstream repository commit `d9d40ef123d2c87d5d3df28c96bcab4f0faccc87`. The downloaded `empire_launcher_vbs.zip` archive has SHA-256 `812da270cf8cda6f1948fb6275410f15dc1794d0bd6b623c9c25b2518285019c`. The `LICENSE` file at that commit says **MIT**, permitting research use; the upstream README also contains a GPL-3.0 reference to a legacy repository, so the discrepancy is disclosed. The raw archive is downloaded for local analysis and is not redistributed.
+## Source and test limits
 
-There is no train/test split: the entire event file is one documented positive scenario. There is no benign partition and no event-level ground truth. Therefore the defensible report is one scenario hit/miss and `N/A` for false alerts, rather than an accuracy, precision, or recall estimate. The synthetic benchmark and this Mordor check answer different questions and should stay separate in the README.
+The source is OTRF Security-Datasets (Mordor), sample ID SDWIN-190518182022. I used the copy saved at upstream commit d9d40ef123d2c87d5d3df28c96bcab4f0faccc87. The empire_launcher_vbs.zip file has SHA-256 812da270cf8cda6f1948fb6275410f15dc1794d0bd6b623c9c25b2518285019c.
 
-## Reproduce it
+The LICENSE file at that commit says MIT. The README also mentions GPL-3.0 for an older project. I have kept this difference here. The test downloads the file for local use and does not share it again.
 
-From the ThreatScope repository root:
+The sample notes describe one PowerShell attack case using T1059.001. There are no labels for each event, no safe events, and no separate train and test groups. The only fair result is one missed attack case and N/A for wrong alerts. It would be wrong to use these counts as a general accuracy, precision, or recall score.
 
-```sh
-python -m pip install -r requirements.txt
-python -m threatscope.real_data --download --data-dir threatscope/data/real-data
-```
+## Run the test again
 
-The downloader pins the upstream commit and verifies the archive SHA-256. It reads JSONL directly from the ZIP without extracting raw logs into the repository. The `threatscope/data/real-data/` directory is ignored by Git.
+From the ThreatScope project folder, run:
 
-The [ThreatScope real-data report](https://github.com/harshacreate/ThreatScope/blob/main/phase1-mordor-evaluation/docs/REAL_DATA.md) includes the exact rule table, field mapping, source pin, checksum, and license note. The engineering result is modest but useful: the data path worked, the narrow matcher failed on a documented positive, and the source cannot support claims about benign false alerts or general performance.
+    python -m pip install -r requirements.txt
+    python -m threatscope.real_data --download --data-dir threatscope/data/real-data
+
+The download uses the saved source commit and checks the file's SHA-256 before reading it. It reads the JSON lines from the ZIP file without unpacking the raw logs into the project. Git ignores the data/real-data/ folder.
+
+The [ThreatScope real-data report](https://github.com/harshacreate/ThreatScope/blob/main/docs/REAL_DATA.md) has the full table, field names, source commit, checksum, and license note. The main result is simple: the data loaded, the rule missed a known attack, and this sample cannot show wrong alerts or general results.
