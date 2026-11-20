@@ -14,7 +14,7 @@ The model reads 16 parts of a link. These include how long the link and site nam
 
 The model learned from links made by the sample maker. If the sample maker often puts certain details together, the model may learn those details as shortcuts. It may then miss a phishing link that uses a different pattern.
 
-The extra rules keep the model's score and add stronger warnings for some signs. These include an IP number as the site name, punycode, an @ redirect trick, a known brand on a different site name, and some misspelled or extended brand names. A public list of domain endings helps find the main registered site name before these checks run.
+The extra rules keep the model's score and add stronger warnings for some signs. These include an IP number as the site name, punycode, an @ redirect trick, a known brand on a different site name, and some misspelled or extended brand names. A public list of domain endings helps find the main registered site name before these checks run.
 
 This check suggests the extra rules helped. It does not prove which rule caused each result. I used another small set while building the rules, so its result may look better than it should. I wrote the 10-link check before adding the rules and did not use it to tune them. It is still a tiny hand-written set. A larger test that other people can repeat would give stronger proof.
 
@@ -33,9 +33,9 @@ The test had the same number of phishing and popular sites. Popular sites were u
 
 ## Sources and how I made the test
 
-The phishing links came from [PhiLegit-100K, version 1](https://data.mendeley.com/datasets/726pyz4j53/1), DOI [10.17632/726pyz4j53.1](https://doi.org/10.17632/726pyz4j53.1). It uses the CC BY 4.0 license and combines PhiUSIIL and LegitPhish. Its README asks users to credit both sources. The saved archive SHA-256 is d95a1419f4b2d1cb98c3ce31fedf7cdabd148f70f42e6ed3de6244366b525558.
+The phishing links came from [PhiLegit-100K, version 1](https://data.mendeley.com/datasets/726pyz4j53/1), DOI [10.17632/726pyz4j53.1](https://doi.org/10.17632/726pyz4j53.1). It uses the CC BY 4.0 license and combines PhiUSIIL and LegitPhish. Its README asks users to credit both sources. The saved archive SHA-256 is d95a1419f4b2d1cb98c3ce31fedf7cdabd148f70f42e6ed3de6244366b525558.
 
-The popular sites came from [Tranco list 947N2](https://tranco-list.eu/download/947N2/50000). It lists the top 50,000 domains as of 2026-11-09 22:00:01 UTC and covers 2026-10-11 to 2026-11-09. It uses CrUX, Farsight, Majestic, Cloudflare Radar, and Cisco Umbrella. Tranco says the list is for research. The source terms include CC BY 3.0, CC BY-SA 4.0, and CC BY-NC 4.0. Cisco Umbrella is free to use. This test is non-commercial research. The saved CSV SHA-256 is 664b9c716992204d48f87c27a12dd08c9f77b4c468249dbdc57f10c3b52f70e2.
+The popular sites came from [Tranco list 947N2](https://tranco-list.eu/download/947N2/50000). It lists the top 50,000 domains as of 2026-11-09 22:00:01 UTC and covers 2026-10-11 to 2026-11-09. It uses CrUX, Farsight, Majestic, Cloudflare Radar, and Cisco Umbrella. Tranco says the list is for research. The source terms include CC BY 3.0, CC BY-SA 4.0, and CC BY-NC 4.0. Cisco Umbrella is free to use. This test is non-commercial research. The saved CSV SHA-256 is 664b9c716992204d48f87c27a12dd08c9f77b4c468249dbdc57f10c3b52f70e2.
 
 Tranco ranks popular domains. It does not prove that a site is safe. For this test, each chosen domain was treated as a safe home page starting with HTTPS. I did not check whether the site worked or what it showed.
 
