@@ -15,6 +15,11 @@ I am in my final year of B.Tech at HITS. I study Computer Science and focus on c
 
 These projects use sample data or small local tests. Each project page explains what it can and cannot show.
 
+## Evaluation notes
+
+- ThreatScope's 25-seed synthetic benchmark recorded 150 true alerts with no false or missed alerts in those generated cases. A separate pinned Mordor sample missed one documented PowerShell scenario; it has no benign labels for measuring false alerts. See the [real-data report](https://github.com/harshacreate/ThreatScope/blob/main/docs/REAL_DATA.md).
+- On a balanced PhishLens evaluation set of 33,142 phishing domains and 33,142 popular-domain proxies, the hybrid scorer reached F1 0.584, recall 0.416, and precision 0.982. The balanced sample does not estimate production prevalence. See the [real-data report](https://github.com/harshacreate/PhishLens/blob/main/docs/REAL_DATA.md).
+
 ## Links
 
 [Portfolio](https://harshacreate.github.io/harshacreate/) · [LinkedIn](https://www.linkedin.com/in/harsha-malepati-b2574a28a/) · [ORCID](https://orcid.org/0009-0008-6998-8324) · [Email](mailto:harshamalepati2006@gmail.com)
