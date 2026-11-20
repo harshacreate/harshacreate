@@ -1,19 +1,19 @@
 # Harsha Malepati
 
-I am a final-year B.Tech student in Computer Science and Engineering with a cybersecurity specialization at Hindustan Institute of Technology and Science, Chennai. My program is in collaboration with IBM. I have completed six semesters with a CGPA of 8.6/10, and I expect to graduate in 2027.
+I am a final-year B.Tech student studying Computer Science and Engineering with a focus on cybersecurity at Hindustan Institute of Technology and Science in Chennai. My course is in collaboration with IBM. I have finished six semesters with a CGPA of 8.6/10, and I expect to graduate in 2027.
 
-## Selected projects
+## Projects
 
-| Year | Project | Summary |
-|---|---|---|
-| First year | [CryptoGuard](https://github.com/harshacreate/CryptoGuard) | A local password and file security workbench with password analysis, secure generation, authenticated encryption, and password-storage benchmarks. |
-| Second year | [PhishLens](https://github.com/harshacreate/PhishLens) | An explainable phishing URL analysis tool with URL, email, and batch checks. Its evaluation uses synthetic samples and a small held-out set. |
-| Third year | [ThreatScope](https://github.com/harshacreate/ThreatScope) | A local SOC lab for log and packet analysis, ATT&CK-mapped alerts, and evaluation against generated ground truth. |
-| Additional work | [AuthMatrix-Veritas](https://github.com/harshacreate/AuthMatrix-Veritas) | Tests API authorization using vulnerable, hardened, and deny-all sample implementations. |
-| Additional work | [NeuralEdge-IDS](https://github.com/harshacreate/NeuralEdge-IDS) | Compares centralized and federated intrusion detection on synthetic IoT traffic and generated behavior drift. |
-| Additional work | [ProvenanceForge-SLSA](https://github.com/harshacreate/ProvenanceForge-SLSA) | A local exercise in signing and verifying software artifacts, SBOMs, and build provenance. |
+| Project | What it does |
+|---|---|
+| [CryptoGuard](https://github.com/harshacreate/CryptoGuard) | Checks password strength, makes passwords, encrypts files, and compares password storage methods. |
+| [PhishLens](https://github.com/harshacreate/PhishLens) | Checks links and email text for signs of phishing. It explains why something may be unsafe and can check many items at once. |
+| [ThreatScope](https://github.com/harshacreate/ThreatScope) | Reads sample logs and network traffic to find signs of attacks. It links alerts to MITRE ATT&CK and tests them with sample data. |
+| [AuthMatrix-Veritas](https://github.com/harshacreate/AuthMatrix-Veritas) | Tests API access rules with a vulnerable sample API, a fixed version, and a version that blocks every request. |
+| [NeuralEdge-IDS](https://github.com/harshacreate/NeuralEdge-IDS) | Compares two ways to train a small IoT threat detector using made-up traffic. It checks what happens when normal traffic changes. |
+| [ProvenanceForge-SLSA](https://github.com/harshacreate/ProvenanceForge-SLSA) | Signs records about a sample software build and checks that its files have not changed. |
 
-The results in these projects come from synthetic data or controlled local fixtures. Each repository describes its setup, tests, and limitations.
+These projects use sample data or small local tests. Each project page explains what it can and cannot show.
 
 ## Links
 
