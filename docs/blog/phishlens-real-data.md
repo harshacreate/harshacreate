@@ -24,8 +24,8 @@ I tested the saved model on public link data. The model was trained only on the 
 
 | Check | Correct phishing found | Safe links marked as phishing | Safe links left alone | Phishing links missed | Precision (95% range) | Recall (95% range) | F1 (95% range) |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| Model only | 13,300 | 194 | 32,948 | 19,842 | 0.986 (0.984–0.988) | 0.401 (0.396–0.407) | 0.570 (0.565–0.576) |
-| Model and extra rules | 13,786 | 257 | 32,885 | 19,356 | 0.982 (0.980–0.984) | 0.416 (0.411–0.421) | 0.584 (0.579–0.590) |
+| Model only | 13,300 | 194 | 32,948 | 19,842 | 0.986 (0.984 to 0.988) | 0.401 (0.396 to 0.407) | 0.570 (0.565 to 0.576) |
+| Model and extra rules | 13,786 | 257 | 32,885 | 19,356 | 0.982 (0.980 to 0.984) | 0.416 (0.411 to 0.421) | 0.584 (0.579 to 0.590) |
 
 Precision shows how often a phishing result was right. Recall shows how many phishing links were found. F1 is one score made from precision and recall. The extra rules found 486 more phishing domains and raised recall by 1.5 points. They also marked 63 more popular sites as phishing. In this test, the model alone had slightly higher precision, while the combined check had higher recall and F1.
 
