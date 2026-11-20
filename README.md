@@ -6,24 +6,24 @@ I am in my final year of B.Tech at HITS. I study Computer Science and focus on c
 
 | Project | What it does |
 |---|---|
-| [CryptoGuard](https://github.com/harshacreate/CryptoGuard) | Checks password patterns, makes passwords, and encrypts files with a versioned `.cguard` v1 format; Argon2id remains an opt-in benchmark, not the file-encryption KDF. |
+| [CryptoGuard](https://github.com/harshacreate/CryptoGuard) | Checks password strength, makes passwords, and encrypts files in the .cguard format. |
 | [PhishLens](https://github.com/harshacreate/PhishLens) | Checks links and email text for signs of phishing. It explains why something may be unsafe and can check many items at once. |
-| [ThreatScope](https://github.com/harshacreate/ThreatScope) | Reads sample logs and network traffic, validates a bounded Sigma subset, and links scan, authentication, and web evidence by source IP. The bundled fixture does not include a complete cross-source chain. |
-| [AuthMatrix-Veritas](https://github.com/harshacreate/AuthMatrix-Veritas) | Tests API access rules with a vulnerable sample API, a fixed version, and a version that blocks every request. |
-| [NeuralEdge-IDS](https://github.com/harshacreate/NeuralEdge-IDS) | Compares two ways to train a small IoT threat detector using made-up traffic. It checks what happens when normal traffic changes. |
+| [ThreatScope](https://github.com/harshacreate/ThreatScope) | Reads sample logs and network traffic to find possible attacks. It also tests Sigma rules and links events from the same source IP. |
+| [AuthMatrix-Veritas](https://github.com/harshacreate/AuthMatrix-Veritas) | Tests API access rules with a broken sample API, a fixed one, and one that blocks every request. |
+| [NeuralEdge-IDS](https://github.com/harshacreate/NeuralEdge-IDS) | Compares two ways to train a small threat checker with made-up IoT traffic. It checks what happens when normal traffic changes. |
 | [ProvenanceForge-SLSA](https://github.com/harshacreate/ProvenanceForge-SLSA) | Signs records about a sample software build and checks that its files have not changed. |
 
-These projects use sample data or small local tests. Each project page explains what it can and cannot show.
+These projects use sample data or small local tests. Each project page says what its tests do and do not show.
 
-## Evaluation notes
+## Test notes
 
-- ThreatScope's 25-seed synthetic benchmark recorded 150 true alerts with no false or missed alerts in those generated cases. A separate pinned Mordor sample missed one documented PowerShell scenario; it has no benign labels for measuring false alerts. See the [real-data report](https://github.com/harshacreate/ThreatScope/blob/main/docs/REAL_DATA.md).
-- On a balanced PhishLens evaluation set of 33,142 phishing domains and 33,142 popular-domain proxies, the hybrid scorer reached F1 0.584, recall 0.416, and precision 0.982. The balanced sample does not estimate production prevalence. See the [real-data report](https://github.com/harshacreate/PhishLens/blob/main/docs/REAL_DATA.md).
+- ThreatScope found 150 sample attacks in 25 test runs, with no wrong or missed alerts in those tests. In one separate public sample, it missed a known PowerShell attack. That sample has no safe events, so wrong alerts could not be counted. See the [test notes](https://github.com/harshacreate/ThreatScope/blob/main/docs/REAL_DATA.md).
+- PhishLens was checked on 33,142 phishing domains and 33,142 popular domains used as a stand-in for safe sites. The combined checker found 41.6% of the phishing domains. When it marked a domain as phishing, it was right 98.2% of the time in this test. The even split does not match real use. See the [test notes](https://github.com/harshacreate/PhishLens/blob/main/docs/REAL_DATA.md).
 
 ## Writing
 
-- [PhishLens: when the model missed the phish](docs/blog/phishlens-real-data.md) — Out-of-template probes, a hybrid-rule intervention, and a held-out public-data evaluation.
-- [ThreatScope: synthetic detections meet Mordor](docs/blog/threatscope-real-data.md) — What the synthetic benchmark showed, what one public scenario exposed, and how to reproduce it.
+- [Testing PhishLens on public links](docs/blog/phishlens-real-data.md) — Where the model missed signs and what changed in a test with public links.
+- [Testing ThreatScope with public data](docs/blog/threatscope-real-data.md) — What the made-up tests showed and what one public sample revealed.
 
 ## Links
 
