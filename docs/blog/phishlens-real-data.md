@@ -1,14 +1,14 @@
-# Testing PhishLens on public links
+Testing PhishLens on public links
 
 PhishLens first used a logistic regression model trained on links made by its own sample maker. This made the tests easy to repeat. I also wanted to know if it could find phishing links that did not match those examples.
 
-## A small check with new links
+A small check with new links
 
 I wrote 10 phishing links by hand. I counted a link as found when its score was 40 or more. The model alone found 1 of the 10. The model with extra rules found 9 of the 10. It did not flag any of 12 safe links written for this check.
 
 These links use made-up domains and reserved example IP addresses. This is a very small check, not a picture of all links people see. The 95% range for the combined check's find rate was 0.596 to 0.982. Its false alert rate range was 0 to 0.242. A false alert means that a safe link was marked as phishing. The ranges are wide because there were few links.
 
-## Why I added extra checks
+Why I added extra checks
 
 The model reads 16 parts of a link. These include how long the link and site name are, how many parts come before the main site name, whether the address is an IP number, and whether it uses punycode. It also looks for odd domain endings, redirects, number patterns, look-alike brand names, and words often used to ask for a password.
 
@@ -18,7 +18,7 @@ The extra rules keep the model's score and add stronger warnings for some signs.
 
 This check suggests the extra rules helped. It does not prove which rule caused each result. I used another small set while building the rules, so its result may look better than it should. I wrote the 10-link check before adding the rules and did not use it to tune them. It is still a tiny hand-written set. A larger test that other people can repeat would give stronger proof.
 
-## Check with public data
+Check with public data
 
 I tested the saved model on public link data. The model was trained only on the sample links made with seed 0. I did not use either public source to train or tune it. PhishLens did not look up or open any test link.
 
@@ -31,7 +31,7 @@ Precision shows how often a phishing result was right. Recall shows how many phi
 
 The test had the same number of phishing and popular sites. Popular sites were used as a stand-in for safe sites, but a popular site can still be hacked. This even split does not match real use, where phishing links are much less common. The precision here does not show what precision would be in real use. The combined check found about 42% of the phishing domains, so it missed more than half of them.
 
-## Sources and how I made the test
+Sources and how I made the test
 
 The phishing links came from [PhiLegit-100K, version 1](https://data.mendeley.com/datasets/726pyz4j53/1), DOI [10.17632/726pyz4j53.1](https://doi.org/10.17632/726pyz4j53.1). It uses the CC BY 4.0 license and combines PhiUSIIL and LegitPhish. Its README asks users to credit both sources. The saved archive SHA-256 is d95a1419f4b2d1cb98c3ce31fedf7cdabd148f70f42e6ed3de6244366b525558.
 
@@ -47,7 +47,7 @@ A score of 70 or more counted as phishing. Scores from 40 to 69 counted as not p
 
 The Public Suffix List code uses tldextract 5.4.0 and the saved domain-ending list. It does not download updates while the app runs. To update it, change the pinned package on purpose, then run the domain tests and this evaluation again.
 
-## Run the test again
+Run the test again
 
 Use Python 3.12 and install bsdtar to read the PhiLegit RAR file. From the project folder, run:
 
