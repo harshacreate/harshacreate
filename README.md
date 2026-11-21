@@ -25,6 +25,10 @@ Writing
 - [Testing PhishLens on public links](docs/blog/phishlens-real-data.md): Where the model missed signs and what changed in a test with public links.
 - [Testing ThreatScope with public data](docs/blog/threatscope-real-data.md): What the made-up tests showed and what one public sample revealed.
 
+Open-source contributions
+
+Submitted a relative line number documentation update to [Helix](https://github.com/helix-editor/helix/pull/16490), a hostname rule clarification to [Wazuh](https://github.com/wazuh/wazuh-documentation/pull/10854), and a Python support range fix to [Spyfish Aotearoa](https://github.com/wildlifeai/spyfish-aotearoa-toolkit/pull/117). These pull requests are awaiting maintainer review.
+
 Links
 
 [Portfolio](https://harshacreate.github.io/harshacreate/), [LinkedIn](https://www.linkedin.com/in/harsha-malepati-b2574a28a/), [ORCID](https://orcid.org/0009-0008-6998-8324), [Email](mailto:harshamalepati2006@gmail.com)
