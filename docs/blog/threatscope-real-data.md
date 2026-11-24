@@ -10,13 +10,15 @@ Result from the public sample
 
 The sample has 2,067 lines of JSON, including five Sysmon Process Create events. Its notes describe one local PowerShell attack and link it to ATT&CK method T1059.001. The sample does not say which single events are safe or harmful, and it has no safe attack case.
 
-| Rule | Alerts | Misses | Wrong alerts | What this sample can show |
-|---|---:|---:|---:|---|
-| suspicious_process | 0 | 1 | N/A | One known PowerShell attack; no safe event labels |
-| brute_force_login | N/A | N/A | N/A | No labeled login test |
-| impossible_travel | N/A | N/A | N/A | No labeled unusual login test |
-| port_scan | N/A | N/A | N/A | This is not a port scan test |
-| data_exfil | N/A | N/A | N/A | No labels for data volume or theft |
+Rule: suspicious_process; Alerts: 0; Misses: 1; Wrong alerts: N/A; What this sample can show: One known PowerShell attack; no safe event labels
+
+Rule: brute_force_login; Alerts: N/A; Misses: N/A; Wrong alerts: N/A; What this sample can show: No labeled login test
+
+Rule: impossible_travel; Alerts: N/A; Misses: N/A; Wrong alerts: N/A; What this sample can show: No labeled unusual login test
+
+Rule: port_scan; Alerts: N/A; Misses: N/A; Wrong alerts: N/A; What this sample can show: This is not a port scan test
+
+Rule: data_exfil; Alerts: N/A; Misses: N/A; Wrong alerts: N/A; What this sample can show: No labels for data volume or theft
 
 The process rule missed the one known PowerShell attack. I counted this as one missed attack case. I did not guess labels for each event. The sample has no known safe events, so I cannot count wrong alerts. It also cannot test the other four rules. These results cannot be compared with the test that uses made-up events, and they do not show how well the app works in general.
 
