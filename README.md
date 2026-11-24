@@ -1,3 +1,3 @@
-I’m a final year computer science student. My focus is cybersecurity.
+Final year computer science student
 
 [My projects](https://harshacreate.github.io/harshacreate/)
