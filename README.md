@@ -16,14 +16,4 @@ Open source work
 
 [Spyfish PR 117](https://github.com/wildlifeai/spyfish-aotearoa-toolkit/pull/117) documents the supported Python versions.
 
-Contribution mix
-
-```mermaid
-pie showData
-    title Contribution mix
-    "Code review" : 4
-    "Issues" : 9
-    "Pull requests" : 87
-```
-
 [Project page](https://harshacreate.github.io/harshacreate/)
