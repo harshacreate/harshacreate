@@ -8,8 +8,6 @@ Projects
 
 [NeuralEdge IDS](https://github.com/harshacreate/NeuralEdge-IDS) explores network intrusion detection.
 
-[ProvenanceForge SLSA](https://github.com/harshacreate/ProvenanceForge-SLSA) works with software supply chain provenance.
-
 Open source work
 
 [Helix PR 16490](https://github.com/helix-editor/helix/pull/16490) clarifies relative line numbers during selections.
