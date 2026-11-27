@@ -3,98 +3,216 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Harsha Malepati is a computer science student focused on cybersecurity. See his projects and contact links.">
+  <meta name="description" content="Harsha Malepati's cybersecurity projects and open source work.">
+  <meta property="og:title" content="Harsha Malepati | Projects">
+  <meta property="og:description" content="A visual tour of Harsha Malepati's cybersecurity projects.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Harsha Malepati | Cybersecurity Projects">
-  <meta property="og:description" content="Coursework and personal projects in cybersecurity.">
   <meta property="og:url" content="https://harshacreate.github.io/harshacreate/">
-  <meta name="theme-color" content="#101827">
-  <title>Harsha Malepati | Cybersecurity Projects</title>
+  <title>Harsha Malepati | Projects</title>
   <style>
-    :root { color-scheme: dark; --bg:#101827; --panel:#172337; --line:#30415a; --text:#eef3f8; --muted:#b6c2d2; --accent:#75d7b0; --link:#b4ccff; --max:1000px; }
-    * { box-sizing:border-box; }
-    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; }
-    a { color:var(--link); text-underline-offset:3px; }
-    .wrap { width:min(var(--max),calc(100% - 36px)); margin:0 auto; }
-    header { border-bottom:1px solid var(--line); padding:18px 0; }
-    nav,.links,.tags { display:flex; align-items:center; flex-wrap:wrap; gap:14px; }
-    nav { justify-content:space-between; }
-    nav a,.brand { text-decoration:none; }
-    .brand { color:var(--text); font-weight:700; }
-    .hero { padding:72px 0 38px; max-width:760px; }
-    .kicker { color:var(--accent); font-size:.9rem; }
-    h1 { margin:8px 0 12px; font-size:clamp(2.5rem,7vw,4.5rem); line-height:1.05; }
-    h2 { margin:0; font-size:1.8rem; }
-    h3 { margin:0 0 8px; font-size:1.2rem; }
-    .intro,.muted { color:var(--muted); }
-    .facts { display:flex; flex-wrap:wrap; gap:12px; margin-top:22px; }
-    .fact,.tag { border:1px solid var(--line); border-radius:8px; padding:8px 12px; }
-    section { padding:34px 0; }
-    .section-head { margin-bottom:18px; }
-    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
-    article { overflow:hidden; background:var(--panel); border:1px solid var(--line); border-radius:12px; }
-    article img { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; border-bottom:1px solid var(--line); background:#1f3048; }
-    .body { padding:18px; }
-    .body p { margin:0; color:var(--muted); }
-    .body p + p { margin-top:10px; }
-    .year { color:var(--accent) !important; font-size:.9rem; margin-bottom:5px !important; }
-    .tags { margin-top:14px; gap:7px; }
-    .tag { color:var(--muted); padding:3px 9px; font-size:.82rem; }
-    .links { margin-top:16px; }
-    .note { border-left:3px solid var(--accent); padding:10px 14px; color:var(--muted); }
-    footer { margin-top:24px; padding:22px 0 34px; border-top:1px solid var(--line); }
-    @media(max-width:680px) { .grid { grid-template-columns:1fr; } .hero { padding-top:54px; } nav { align-items:flex-start; } }
+    :root {
+      color-scheme: dark;
+      --bg: #07090f;
+      --bg-2: #111522;
+      --panel: rgba(22, 26, 39, .76);
+      --panel-solid: #171b29;
+      --text: #f7f8fb;
+      --muted: #a8afc2;
+      --line: rgba(255, 255, 255, .13);
+      --accent: #8ee5c1;
+      --accent-2: #a7c7ff;
+      --shadow: rgba(0, 0, 0, .42);
+    }
+
+    :root[data-theme="snow"] { color-scheme: light; --bg: #eef1f6; --bg-2: #ffffff; --panel: rgba(255, 255, 255, .74); --panel-solid: #ffffff; --text: #101522; --muted: #5b6578; --line: rgba(16, 21, 34, .14); --accent: #086c55; --accent-2: #2c59a8; --shadow: rgba(31, 45, 76, .17); }
+    :root[data-theme="rose"] { --bg: #180d18; --bg-2: #30142b; --panel: rgba(54, 26, 51, .76); --panel-solid: #351a31; --text: #fff8fc; --muted: #d9b7c9; --line: rgba(255, 223, 241, .16); --accent: #ffb4d2; --accent-2: #ffc898; --shadow: rgba(0, 0, 0, .46); }
+    :root[data-theme="forest"] { --bg: #07140f; --bg-2: #10251b; --panel: rgba(18, 44, 33, .76); --panel-solid: #123022; --text: #f3fff8; --muted: #b2cdbd; --line: rgba(210, 255, 228, .14); --accent: #a4edb6; --accent-2: #b9d5ff; --shadow: rgba(0, 0, 0, .48); }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; min-width: 320px; background: radial-gradient(circle at 18% 0%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 32rem), linear-gradient(145deg, var(--bg), var(--bg-2)); color: var(--text); font: 16px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", sans-serif; }
+    body::before { content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .28; background-image: radial-gradient(rgba(255,255,255,.13) .7px, transparent .7px); background-size: 5px 5px; mix-blend-mode: soft-light; }
+    a { color: inherit; }
+    button { font: inherit; }
+    .shell { width: min(1180px, calc(100% - 36px)); margin: 0 auto; }
+    .topbar { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 76%, transparent); backdrop-filter: blur(22px) saturate(150%); }
+    .nav { min-height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 700; letter-spacing: -.02em; }
+    .brand-mark { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 9px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: var(--bg); font-size: .86rem; }
+    .nav-links { display: flex; align-items: center; gap: 18px; color: var(--muted); font-size: .92rem; }
+    .nav-links a { text-decoration: none; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--text); }
+    .theme-picker { display: flex; align-items: center; gap: 6px; padding: 5px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); }
+    .theme-picker button { border: 0; border-radius: 999px; padding: 6px 10px; background: transparent; color: var(--muted); cursor: pointer; font-size: .78rem; }
+    .theme-picker button[aria-pressed="true"] { background: var(--text); color: var(--bg); }
+    .hero { padding: 86px 0 46px; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr); align-items: end; gap: 44px; }
+    .eyebrow { margin: 0 0 12px; color: var(--accent); font-size: .84rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { max-width: 720px; margin: 0; font-size: clamp(3rem, 8vw, 7.2rem); line-height: .92; letter-spacing: -.075em; }
+    .hero-copy { max-width: 600px; margin: 24px 0 0; color: var(--muted); font-size: clamp(1rem, 2vw, 1.2rem); }
+    .hero-note { align-self: end; padding: 22px; border: 1px solid var(--line); border-radius: 22px; background: linear-gradient(145deg, color-mix(in srgb, var(--accent) 13%, var(--panel)), var(--panel)); box-shadow: 0 24px 80px var(--shadow); }
+    .hero-note strong { display: block; margin-bottom: 7px; font-size: 1.05rem; }
+    .hero-note p { margin: 0; color: var(--muted); }
+    .reel-section { padding: 30px 0 96px; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 18px; }
+    h2 { margin: 0; font-size: clamp(1.7rem, 3vw, 2.4rem); letter-spacing: -.04em; }
+    .section-head p { max-width: 460px; margin: 0; color: var(--muted); text-align: right; }
+    .reel { position: relative; min-height: 660px; display: grid; place-items: center; perspective: 1600px; touch-action: pan-y; user-select: none; }
+    .stage { position: relative; width: min(100%, 980px); height: 620px; transform-style: preserve-3d; }
+    .project-card { position: absolute; top: 50%; left: 50%; width: min(420px, 74vw); height: 570px; overflow: hidden; border: 1px solid var(--line); border-radius: 28px; background: var(--panel); box-shadow: 0 28px 90px var(--shadow); transform-style: preserve-3d; opacity: 0; pointer-events: none; transition: transform .58s cubic-bezier(.2,.74,.2,1), opacity .4s ease, filter .45s ease; }
+    .project-card.is-active { opacity: 1; pointer-events: auto; transform: translate3d(-50%, -50%, 110px) rotateY(0deg) scale(1); z-index: 5; }
+    .project-card.is-left { opacity: .55; transform: translate3d(calc(-50% - 330px), -50%, -80px) rotateY(35deg) scale(.82); z-index: 3; }
+    .project-card.is-right { opacity: .55; transform: translate3d(calc(-50% + 330px), -50%, -80px) rotateY(-35deg) scale(.82); z-index: 3; }
+    .project-card.is-far-left { opacity: .12; transform: translate3d(calc(-50% - 560px), -50%, -230px) rotateY(50deg) scale(.68); z-index: 1; }
+    .project-card.is-far-right { opacity: .12; transform: translate3d(calc(-50% + 560px), -50%, -230px) rotateY(-50deg) scale(.68); z-index: 1; }
+    .card-image { position: relative; height: 270px; overflow: hidden; background: linear-gradient(135deg, var(--accent), var(--accent-2)); }
+    .card-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 46%, rgba(0,0,0,.54)); }
+    .card-image img { width: 100%; height: 100%; display: block; object-fit: cover; }
+    .card-index { position: absolute; left: 18px; bottom: 16px; z-index: 1; color: #fff; font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .card-body { display: flex; min-height: 300px; flex-direction: column; padding: 24px; }
+    .card-kicker { margin: 0 0 8px; color: var(--accent); font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .card-body h3 { margin: 0; font-size: 2rem; letter-spacing: -.055em; }
+    .card-body p { margin: 13px 0 0; color: var(--muted); }
+    .chip-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px; }
+    .chip { padding: 5px 9px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: .78rem; }
+    .card-actions { display: flex; align-items: center; gap: 10px; margin-top: auto; padding-top: 22px; }
+    .primary-link, .ghost-link { display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: 999px; text-decoration: none; font-size: .88rem; }
+    .primary-link { background: var(--text); color: var(--bg); }
+    .ghost-link { border: 1px solid var(--line); color: var(--text); }
+    .reel-controls { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: -8px; }
+    .round-control { width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 50%; background: var(--panel); color: var(--text); cursor: pointer; }
+    .round-control:hover, .round-control:focus-visible { background: var(--text); color: var(--bg); }
+    .progress { display: flex; align-items: center; gap: 5px; margin: 0 5px; }
+    .progress button { width: 22px; height: 4px; padding: 0; border: 0; border-radius: 999px; background: var(--line); cursor: pointer; }
+    .progress button[aria-current="true"] { width: 42px; background: var(--accent); }
+    .helper { margin: 14px 0 0; color: var(--muted); text-align: center; font-size: .85rem; }
+    .below { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding: 30px 0 80px; }
+    .info-panel { padding: 20px; border: 1px solid var(--line); border-radius: 20px; background: var(--panel); }
+    .info-panel h3 { margin: 0 0 7px; font-size: 1rem; }
+    .info-panel p { margin: 0; color: var(--muted); }
+    footer { border-top: 1px solid var(--line); padding: 22px 0 36px; color: var(--muted); }
+    .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 16px; }
+    @media (max-width: 860px) { .hero { grid-template-columns: 1fr; gap: 24px; } .hero-note { max-width: 560px; } .section-head { align-items: start; flex-direction: column; } .section-head p { text-align: left; } .project-card.is-left { transform: translate3d(calc(-50% - 260px), -50%, -80px) rotateY(32deg) scale(.78); } .project-card.is-right { transform: translate3d(calc(-50% + 260px), -50%, -80px) rotateY(-32deg) scale(.78); } }
+    @media (max-width: 620px) { .shell { width: min(100% - 24px, 520px); } .nav-links { display: none; } .theme-picker button { padding: 6px 8px; } .hero { padding-top: 58px; } .reel { min-height: 600px; } .stage { height: 550px; } .project-card { height: 520px; border-radius: 23px; } .card-image { height: 225px; } .card-body { min-height: 295px; padding: 20px; } .card-body h3 { font-size: 1.72rem; } .project-card.is-left, .project-card.is-right, .project-card.is-far-left, .project-card.is-far-right { opacity: 0; pointer-events: none; transform: translate3d(-50%, -50%, -150px) scale(.7); } .below { grid-template-columns: 1fr; } .footer-row { align-items: flex-start; flex-direction: column; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
   </style>
 </head>
 <body>
-  <header>
-    <nav class="wrap" aria-label="Main navigation">
-      <a class="brand" href="#top">Harsha Malepati</a>
-      <div class="links"><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a></div>
+  <header class="topbar">
+    <nav class="shell nav" aria-label="Main navigation">
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">H</span><span>Harsha Malepati</span></a>
+      <div class="nav-links"><a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+      <div class="theme-picker" aria-label="Choose a theme">
+        <button type="button" data-theme-choice="midnight" aria-pressed="true">Night</button>
+        <button type="button" data-theme-choice="snow" aria-pressed="false">Snow</button>
+        <button type="button" data-theme-choice="rose" aria-pressed="false">Rose</button>
+        <button type="button" data-theme-choice="forest" aria-pressed="false">Forest</button>
+      </div>
     </nav>
   </header>
-  <main class="wrap" id="top">
-    <section class="hero">
-      <p class="kicker">B.Tech student in Computer Science and Cybersecurity</p>
-      <h1>Harsha Malepati</h1>
-      <p class="intro">I am a final-year Computer Science and Engineering student at Hindustan Institute of Technology and Science in Chennai. My course is in collaboration with IBM. I have finished six semesters with a CGPA of 8.6/10, and I expect to graduate in 2027.</p>
-      <div class="facts" id="education">
-        <span class="fact">Hindustan Institute of Technology and Science</span>
-        <span class="fact">CGPA 8.6/10</span>
-        <span class="fact">Expected graduation 2027</span>
+
+  <main id="top">
+    <section class="shell hero" id="about">
+      <div>
+        <p class="eyebrow">Computer science and cybersecurity</p>
+        <h1>Projects that make security easier to understand.</h1>
+        <p class="hero-copy">I am Harsha, a Computer Science and Engineering student at Hindustan Institute of Technology and Science in Chennai. I build small tools, test real ideas, and explain what the results mean.</p>
       </div>
+      <aside class="hero-note">
+        <strong>Use the project reel</strong>
+        <p>Swipe, use the arrow keys, or choose a theme. Open a project to see its code and results.</p>
+      </aside>
     </section>
-    <section id="projects">
-      <div class="section-head"><h2>Projects</h2><p class="muted">These are my coursework and personal projects.</p></div>
-      <div class="grid">
-        <article>
-          <img src="https://raw.githubusercontent.com/harshacreate/CryptoGuard/main/docs/screenshots/01-hero.png" alt="CryptoGuard password and file security workbench" loading="lazy">
-          <div class="body"><p class="year">Semester 3</p><h3>CryptoGuard</h3><p>Checks password strength, makes passwords, encrypts files, and compares password storage methods.</p><div class="tags"><span class="tag">Cryptography</span><span class="tag">Python</span><span class="tag">Flask</span></div><div class="links"><a href="https://github.com/harshacreate/CryptoGuard">Source and results</a></div></div>
-        </article>
-        <article>
-          <img src="https://raw.githubusercontent.com/harshacreate/PhishLens/main/docs/screenshots/02-phishing-verdict.png" alt="PhishLens phishing URL analysis result" loading="lazy">
-          <div class="body"><p class="year">Semester 4</p><h3>PhishLens</h3><p>Checks links and email text for signs of phishing. It explains why something may be unsafe and can check many items at once.</p><div class="tags"><span class="tag">Phishing detection</span><span class="tag">Machine learning</span><span class="tag">Python</span></div><div class="links"><a href="https://github.com/harshacreate/PhishLens">Source and results</a></div></div>
-        </article>
-        <article>
-          <img src="https://raw.githubusercontent.com/harshacreate/ThreatScope/main/docs/screenshots/01-soc-overview.png" alt="ThreatScope local SOC console" loading="lazy">
-          <div class="body"><p class="year">Semester 5</p><h3>ThreatScope</h3><p>Reads sample logs and network traffic to find signs of attacks. It links alerts to MITRE ATT&amp;CK.</p><div class="tags"><span class="tag">Detection engineering</span><span class="tag">MITRE ATT&amp;CK</span><span class="tag">Python</span></div><div class="links"><a href="https://github.com/harshacreate/ThreatScope">Source and results</a></div></div>
-        </article>
-        <article>
-          <img src="https://raw.githubusercontent.com/harshacreate/AuthMatrix-Veritas/main/docs/screenshots/dashboard.jpg" alt="AuthMatrix API authorization workbench" loading="lazy">
-          <div class="body"><p class="year">Additional work</p><h3>AuthMatrix-Veritas</h3><p>Tests API access rules with a vulnerable sample API, a fixed version, and one that blocks every request.</p><div class="tags"><span class="tag">API security</span><span class="tag">Authorization testing</span><span class="tag">FastAPI</span></div><div class="links"><a href="https://github.com/harshacreate/AuthMatrix-Veritas">Source and results</a></div></div>
-        </article>
-        <article>
-          <img src="https://raw.githubusercontent.com/harshacreate/NeuralEdge-IDS/main/docs/screenshots/dashboard.jpg" alt="NeuralEdge centralized and federated IDS comparison" loading="lazy">
-          <div class="body"><p class="year">Additional work</p><h3>NeuralEdge-IDS</h3><p>Compares two ways to train a small IoT threat detector with made-up traffic. It checks what happens when normal traffic changes.</p><div class="tags"><span class="tag">IoT security</span><span class="tag">Federated learning</span><span class="tag">Python</span></div><div class="links"><a href="https://github.com/harshacreate/NeuralEdge-IDS">Source and results</a></div></div>
-        </article>
+
+    <section class="shell reel-section" id="projects" aria-labelledby="projects-title">
+      <div class="section-head">
+        <div><p class="eyebrow">Pinned projects</p><h2 id="projects-title">A closer look</h2></div>
+        <p>Five projects from security testing, detection engineering, and applied machine learning.</p>
       </div>
-      <p class="note">The projects use sample data or small tests on a local computer. Each repository explains what its results show and what they do not show.</p>
+      <div class="reel" id="reel" tabindex="0" aria-label="Project reel. Use left and right arrow keys to change project.">
+        <div class="stage" id="stage"></div>
+      </div>
+      <div class="reel-controls" aria-label="Project controls">
+        <button class="round-control" id="previous" type="button" aria-label="Previous project">‹</button>
+        <div class="progress" id="progress" aria-label="Choose a project"></div>
+        <button class="round-control" id="next" type="button" aria-label="Next project">›</button>
+      </div>
+      <p class="helper" id="status" aria-live="polite"></p>
     </section>
-    <section id="contact">
-      <h2>Links</h2>
-      <p class="links"><a href="https://github.com/harshacreate">GitHub</a><a href="https://www.linkedin.com/in/harsha-malepati-b2574a28a/">LinkedIn</a><a href="https://orcid.org/0009-0008-6998-8324">ORCID</a><a href="mailto:harshamalepati2006@gmail.com">Email</a></p>
+
+    <section class="shell below" aria-label="More information">
+      <article class="info-panel"><h3>How I work</h3><p>I start with a clear question, build a small test, and write down the limits of the result.</p></article>
+      <article class="info-panel"><h3>Tools I use</h3><p>Python, Flask, FastAPI, machine learning, MITRE ATT&amp;CK, and secure API design.</p></article>
+      <article class="info-panel"><h3>Open source</h3><p>I also contribute documentation and fixes to Helix, Wazuh, Spyfish, and other projects.</p></article>
     </section>
   </main>
-  <footer><div class="wrap muted">Harsha Malepati | Cybersecurity</div></footer>
+
+  <footer id="contact"><div class="shell footer-row"><span>Harsha Malepati</span><div class="footer-links"><a href="https://github.com/harshacreate">GitHub</a><a href="https://www.linkedin.com/in/harsha-malepati-b2574a28a/">LinkedIn</a><a href="mailto:harshamalepati2006@gmail.com">Email</a></div></div></footer>
+
+  <script>
+    const projects = [
+      { name: "CryptoGuard", type: "Security workbench", image: "https://raw.githubusercontent.com/harshacreate/CryptoGuard/main/docs/screenshots/01-hero.png", alt: "CryptoGuard security workbench", text: "Checks password strength, creates passwords, encrypts files, and compares password storage methods.", tags: ["Cryptography", "Python", "Flask"], repo: "https://github.com/harshacreate/CryptoGuard" },
+      { name: "PhishLens", type: "Phishing checks", image: "https://raw.githubusercontent.com/harshacreate/PhishLens/main/docs/screenshots/02-phishing-verdict.png", alt: "PhishLens phishing result", text: "Checks links and email text for signs of phishing. It explains why a message may be unsafe.", tags: ["Phishing detection", "Machine learning", "Python"], repo: "https://github.com/harshacreate/PhishLens" },
+      { name: "ThreatScope", type: "Detection engineering", image: "https://raw.githubusercontent.com/harshacreate/ThreatScope/main/docs/screenshots/01-soc-overview.png", alt: "ThreatScope security console", text: "Reads sample logs and network traffic to find signs of attacks and link alerts to MITRE ATT&CK.", tags: ["Detection", "MITRE ATT&CK", "Python"], repo: "https://github.com/harshacreate/ThreatScope" },
+      { name: "AuthMatrix-Veritas", type: "API security", image: "https://raw.githubusercontent.com/harshacreate/AuthMatrix-Veritas/main/docs/screenshots/dashboard.jpg", alt: "AuthMatrix API security workbench", text: "Tests API access rules with vulnerable, fixed, and deny-all sample services.", tags: ["API security", "Authorization", "FastAPI"], repo: "https://github.com/harshacreate/AuthMatrix-Veritas" },
+      { name: "NeuralEdge-IDS", type: "IoT security", image: "https://raw.githubusercontent.com/harshacreate/NeuralEdge-IDS/main/docs/screenshots/dashboard.jpg", alt: "NeuralEdge intrusion detection dashboard", text: "Compares two ways to train a small IoT threat detector with sample network traffic.", tags: ["IoT security", "Federated learning", "Python"], repo: "https://github.com/harshacreate/NeuralEdge-IDS" }
+    ];
+
+    const stage = document.querySelector("#stage");
+    const progress = document.querySelector("#progress");
+    const status = document.querySelector("#status");
+    let active = 0;
+    let startX = 0;
+    let dragX = 0;
+    let dragging = false;
+
+    function wrap(index) { return (index + projects.length) % projects.length; }
+
+    function makeCard(project, index) {
+      const card = document.createElement("article");
+      card.className = "project-card";
+      card.dataset.index = index;
+      card.innerHTML = `<div class="card-image"><img src="${project.image}" alt="${project.alt}" loading="lazy"><span class="card-index">${String(index + 1).padStart(2, "0")} / ${String(projects.length).padStart(2, "0")}</span></div><div class="card-body"><p class="card-kicker">${project.type}</p><h3>${project.name}</h3><p>${project.text}</p><div class="chip-row">${project.tags.map(tag => `<span class="chip">${tag}</span>`).join("")}</div><div class="card-actions"><a class="primary-link" href="${project.repo}" target="_blank" rel="noreferrer">View project</a><a class="ghost-link" href="${project.repo}#readme" target="_blank" rel="noreferrer">Read more</a></div></div>`;
+      card.querySelector("img").addEventListener("error", event => { event.currentTarget.style.display = "none"; });
+      return card;
+    }
+
+    projects.forEach((project, index) => stage.appendChild(makeCard(project, index)));
+    projects.forEach((project, index) => { const dot = document.createElement("button"); dot.type = "button"; dot.dataset.index = index; dot.setAttribute("aria-label", `Show ${project.name}`); dot.addEventListener("click", () => goTo(index)); progress.appendChild(dot); });
+
+    function render() {
+      [...stage.children].forEach((card, index) => {
+        const delta = (index - active + projects.length) % projects.length;
+        card.className = "project-card";
+        if (delta === 0) card.classList.add("is-active");
+        else if (delta === 1) card.classList.add("is-right");
+        else if (delta === projects.length - 1) card.classList.add("is-left");
+        else if (delta === 2) card.classList.add("is-far-right");
+        else card.classList.add("is-far-left");
+        card.setAttribute("aria-hidden", delta === 0 ? "false" : "true");
+      });
+      [...progress.children].forEach((dot, index) => dot.setAttribute("aria-current", index === active ? "true" : "false"));
+      status.textContent = `${projects[active].name}. ${projects[active].type}.`;
+    }
+
+    function goTo(index) { active = wrap(index); render(); }
+    function next() { goTo(active + 1); }
+    function previous() { goTo(active - 1); }
+
+    document.querySelector("#next").addEventListener("click", next);
+    document.querySelector("#previous").addEventListener("click", previous);
+    document.querySelector("#reel").addEventListener("keydown", event => { if (event.key === "ArrowRight") next(); if (event.key === "ArrowLeft") previous(); });
+    document.querySelector("#reel").addEventListener("pointerdown", event => { dragging = true; startX = event.clientX; dragX = 0; event.currentTarget.setPointerCapture(event.pointerId); });
+    document.querySelector("#reel").addEventListener("pointermove", event => { if (dragging) dragX = event.clientX - startX; });
+    document.querySelector("#reel").addEventListener("pointerup", () => { if (!dragging) return; if (Math.abs(dragX) > 48) dragX < 0 ? next() : previous(); dragging = false; });
+    document.querySelector("#reel").addEventListener("pointercancel", () => { dragging = false; });
+    document.querySelector("#reel").addEventListener("wheel", event => { if (Math.abs(event.deltaY) > 12) { event.deltaY > 0 ? next() : previous(); } }, { passive: true });
+
+    const themeButtons = document.querySelectorAll("[data-theme-choice]");
+    themeButtons.forEach(button => button.addEventListener("click", () => { const theme = button.dataset.themeChoice; document.documentElement.dataset.theme = theme === "midnight" ? "" : theme; themeButtons.forEach(item => item.setAttribute("aria-pressed", item === button ? "true" : "false")); localStorage.setItem("harsha-theme", theme); }));
+    const savedTheme = localStorage.getItem("harsha-theme");
+    if (savedTheme) { const saved = document.querySelector(`[data-theme-choice="${savedTheme}"]`); if (saved) saved.click(); }
+    render();
+  </script>
 </body>
 </html>
